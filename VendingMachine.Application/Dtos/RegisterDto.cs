@@ -4,14 +4,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VendingMachine.Domain.Validators;
 
 namespace VendingMachine.Application.Dtos
 {
     public class RegisterDto
     {
-        [Required]
+        [Required, EmailAddress]
         public string Email { get; set; }
-        [Required]
+        [Required, BuyerOrSellerValidator]
         public string Role { get; set; }
         [Required]
         public string Password { get; set; }

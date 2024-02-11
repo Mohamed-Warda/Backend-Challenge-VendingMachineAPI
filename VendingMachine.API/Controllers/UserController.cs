@@ -68,7 +68,7 @@ namespace VendingMachine.API.Controllers
 
                 if (result is null || !result.IsAuthenticated)
                 {
-                    return BadRequest();
+                    return BadRequest(result.Message);
                 }
                 else
                 {
@@ -124,6 +124,34 @@ namespace VendingMachine.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Error When Invoking 'GetAllUser' EndPoint in 'UserController' : {ex.Message} ");
+                return StatusCode(500, "Internal Server Error");
+
+            }
+        }
+
+        [HttpPut, Route("ChangePassword")]
+        [Authorize]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto dto)
+        {
+            try
+            {
+                _logger.LogInformation($"Invoking 'ChangePassword' EndPoint in 'UserController'");
+                if (ModelState.IsValid)
+                {
+
+                    var result = await userService.ChangePasswordAsync(dto);
+                    if (result)
+                    {
+                        return Ok();
+                    }
+                    return BadRequest();
+
+                }
+                return BadRequest(ModelState);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error When Invoking 'ChangePassword' EndPoint in 'UserController' : {ex.Message} ");
                 return StatusCode(500, "Internal Server Error");
 
             }

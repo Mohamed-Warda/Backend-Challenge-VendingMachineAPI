@@ -105,9 +105,22 @@ namespace VendingMachine.API
             builder.Services.AddLogging(logging =>
             logging.AddSerilog(dispose: true));
             #endregion
+
+            #region remove identity password restriction to make the api test easier
+            if (bool.Parse(builder.Configuration.GetSection("IsDevelopment").Value))
+            {
+                builder.Services.Configure<IdentityOptions>(options =>
+                {
+                    options.Password.RequireDigit = false;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+
+                });
+            }
+            #endregion
+
             builder.Services.AddAuthorization();
-
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
