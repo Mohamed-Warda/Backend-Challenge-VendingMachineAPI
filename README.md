@@ -4,7 +4,8 @@ I hope you're all doing well. I'm excited to present my API solution to you. I'v
 
 
 # Overview
-- To run the API, you must first have the .NET Core 7 SDK installed, as I built it using .NET 7. Secondly, open the solution in Visual Studio Code. Then, in the Package Manager Console, run the two commands:
+- To run the API, you must first have the .NET Core 7 SDK installed, as I built it using .NET 7.
+- Secondly, open the solution in Visual Studio. Then, in the Package Manager Console, run the two commands:
   ```bach
   add-migration init
   update-database
