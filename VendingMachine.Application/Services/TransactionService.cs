@@ -116,6 +116,10 @@ public class TransactionService : ITransactionService
             {
                 tranaction.IsConfirmed = true;
                 products.Add(tranaction.ProductName, tranaction.AmountOfProducts);
+
+                var product = await productRepository.GetByIdAsync(tranaction.ProductId);
+                product.AmountAvailable -= tranaction.AmountOfProducts;
+                await productRepository.UpdateAsync(product);
             }
             await transactionRepository.UpdateRangeAsync(tranactions);
 
