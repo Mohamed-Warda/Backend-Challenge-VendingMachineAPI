@@ -117,7 +117,7 @@ public class TransactionService : ITransactionService
                 tranaction.IsConfirmed = true;
                 products.Add(tranaction.ProductName, tranaction.AmountOfProducts);
             }
-            transactionRepository.UpdateRangeAsync(tranactions);
+            await transactionRepository.UpdateRangeAsync(tranactions);
 
             var buyer = await _userManager.FindByIdAsync(buyerId.ToString());
             var change = CalculateChange(buyer.Deposit - totalCost);
