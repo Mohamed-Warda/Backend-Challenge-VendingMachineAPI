@@ -150,7 +150,7 @@ public class DbInitializer
         Id = 2,
         ProductName = "Chips",
         AmountAvailable = 15,
-        Cost = 70,
+        Cost = 100,
         SellerId = 1
     },
     new Product
@@ -158,7 +158,7 @@ public class DbInitializer
         Id = 3,
         ProductName = "Candy Bar",
         AmountAvailable = 20,
-        Cost = 60,
+        Cost = 50,
         SellerId = 1
     },
     new Product
@@ -166,7 +166,7 @@ public class DbInitializer
         Id = 4,
         ProductName = "Bottled Water",
         AmountAvailable = 12,
-        Cost = 80,
+        Cost = 100,
         SellerId = 1
     },
     new Product
@@ -174,7 +174,7 @@ public class DbInitializer
         Id = 5,
         ProductName = "Juice",
         AmountAvailable = 8,
-        Cost = 45,
+        Cost = 20,
         SellerId = 1
     },
     new Product
@@ -182,7 +182,7 @@ public class DbInitializer
         Id = 6,
         ProductName = "Energy Drink",
         AmountAvailable = 25,
-        Cost = 55,
+        Cost = 5,
         SellerId = 1
     },
     new Product
@@ -190,7 +190,7 @@ public class DbInitializer
         Id = 7,
         ProductName = "Granola Bar",
         AmountAvailable = 18,
-        Cost = 90,
+        Cost = 50,
         SellerId = 1
     },
     new Product
@@ -198,7 +198,7 @@ public class DbInitializer
         Id = 8,
         ProductName = "Cookies",
         AmountAvailable = 30,
-        Cost = 65,
+        Cost = 100,
         SellerId = 1
     },
     new Product
@@ -206,7 +206,7 @@ public class DbInitializer
         Id = 9,
         ProductName = "Fruit Snack",
         AmountAvailable = 22,
-        Cost = 75,
+        Cost = 10,
         SellerId = 1
     },
     new Product
@@ -214,7 +214,7 @@ public class DbInitializer
         Id = 10,
         ProductName = "Popcorn",
         AmountAvailable = 17,
-        Cost = 85,
+        Cost = 50,
         SellerId = 1
     }
 );
