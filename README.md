@@ -10,11 +10,11 @@ I hope you're all doing well. I'm excited to present my API solution to you. I'v
   add-migration init
   update-database
 
-- just make sure that the api project is the startup project, and ins the package manger console set the Infrastructure project as the default Project (Very Important)
+- Ensure that the API project is set as the startup project. In the Package Manager Console, make sure to set the Infrastructure project as the default project (Very Important).
 ![0](https://github.com/Mohamed-Warda/read-me2/assets/120992737/3df7cdbc-013f-4171-b011-a5d288c7889b)
 
-- I have also seeded some data in the database with the first migration. I added three users (Admin, Buyer, Seller) and ten products for the Seller.
-- The project was structured with clean architecture using the repository pattern. I didn't use the unit of work pattern as I only had one repository. Additionally, I didn't use AutoMapper because my entities had a small number of properties that I could map manually, and AutoMapper wasn't recommended in this case as it would add an unnecessary layer of abstraction to my code. I also implemented exception handling middleware, logging with Serilog, and added some custom validation attributes. Furthermore, I included unit testing
+- I have also seeded some data in the database with the initial migration. I added three users (Admin, Buyer, Seller) and ten products for the Seller.
+- The project was structured using clean architecture and the repository pattern. I didn't use the unit of work pattern as I only had one repository. Additionally, I didn't use AutoMapper because my entities had a small number of properties that I could map manually, and AutoMapper wasn't recommended in this case as it would add an unnecessary layer of abstraction to my code. I also implemented exception handling middleware, logging with Serilog, and added some custom validation attributes. Furthermore, I included unit testing
 
 # Let's begin
 #### Allow me to lead you on a journey into the API.
@@ -28,7 +28,7 @@ I hope you're all doing well. I'm excited to present my API solution to you. I'v
   ###### All of them have the same password: Admin@123
   ![image](https://github.com/Mohamed-Warda/read-me2/assets/120992737/92f79b00-5d76-46c4-a2f4-3a95882c3c19)
  
-1. First i will make new User with Role 'Seller'
+1. First, I will create a new user with the role of 'Seller'.
 ![2](https://github.com/Mohamed-Warda/read-me2/assets/120992737/945ef634-adca-4052-b0b2-ab4e7c1805a6)
  - This would be the response
 ![22](https://github.com/Mohamed-Warda/read-me2/assets/120992737/837e720b-7857-48b2-8c02-d44cbbd18dd4)
@@ -42,17 +42,17 @@ I hope you're all doing well. I'm excited to present my API solution to you. I'v
 **And now You Can add Products**
 ![4](https://github.com/Mohamed-Warda/read-me2/assets/120992737/92bc3852-f7f2-4192-a9cb-5eb7a69125fa)
 
-- **The response and notice indicate that you don't have to enter the SellerId as I obtain it from the token claims**
+- **The response, and notice that you don't have to enter the SellerId as I obtain it from the token claims**
 ![44](https://github.com/Mohamed-Warda/read-me2/assets/120992737/701df7e0-05bf-43d3-9848-09cd1ff2327f)
 
-### Now, for the Buyer users, I won't create a new account. Instead, I'll use the account that I previously set up with the Seeder (It will be inserted automatically when you run the migration commands)
+### Now, for the Buyer user, I won't create a new account. Instead, I'll use the account that I previously set up with the Seeder (It will be inserted automatically when you run the migration commands)
 - **So, log in with `buyer@vm.com`**
 
 #### Let's buy some snacks from our vending machine
 - **So first, I will deposit some coins. The machine only accepts coins with the following values: [5, 10, 20, 50, 100]**
-- **So when I tried to deposit 30, the machine return BadRequest**
+- **So when I tried to deposit 30, the machine returned BadRequest**
 ![5](https://github.com/Mohamed-Warda/read-me2/assets/120992737/774a82ef-e65d-4786-9e95-c595394231f9)
-- **So instead, I deposited 100 and I'm ready to buy my favorite snack**
+- **So instead, I deposited 100 and I'm ready to buy my favorite snacks**
 - **And again, you don't have to add the BuyerId; I set it from the token**
  ![55](https://github.com/Mohamed-Warda/read-me2/assets/120992737/3cb662ef-31ee-495c-9d28-21b740bb6265)
 
@@ -65,7 +65,7 @@ I hope you're all doing well. I'm excited to present my API solution to you. I'v
 - **And as expected, an error message appears saying that I don't have enough deposit and should deposit more.**
  ![8](https://github.com/Mohamed-Warda/read-me2/assets/120992737/6d898d8e-58f2-4f08-838c-83a079dc4212)
 - **So, I will deposit another 100 and buy the bag of chips**
-- **Finally, I will go to the ConfirmPurchase endpoint to confirm my purchases and take my change (should have coins with a value of 50) and my snacks.**
+- **Finally, I will go to the ConfirmPurchase endpoint to confirm my purchases and take my change (should have coin with a value of 50) and my snacks.**
 ![1000](https://github.com/Mohamed-Warda/read-me2/assets/120992737/42e50c8d-fa1e-40bc-9bac-27bfca979347)
 
 #### The response includes my change, which is 1 coin with the value of 50, and the product I bought with its amount. Now, I will enjoy my snacks
