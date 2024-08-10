@@ -1,6 +1,5 @@
 # Introduction 
-Hello FlapKap's team,
-I hope you're all doing well. I'm excited to present my API solution to you. I've put a lot of effort into crafting it, and I sincerely hope you find it to your liking. If you have any questions or feedback, please don't hesitate to reach out. I'm looking forward to hearing your thoughts.
+This project was a backend challenge that implements a Vending Machine API using C# and .NET. It is designed to manage products and transactions in a vending machine. The API allows users with different roles—sellers and buyers—to interact with the vending machine according to their permissions. This project uses Clean Architecture, implements authentication best practices, and includes unit testing.
 
 
 # Overview
